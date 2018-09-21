@@ -1,0 +1,17 @@
+body{
+	background-color: black;
+	height: 100%
+	white:100%;
+}
+
+#logo{
+	margin: auto;
+	width: 1000px;
+	vertical-align: middle;
+}
+
+.cell{
+	fill: white;
+    border-color: #dcf2f2;
+	box-shadow: 0px 0px 25px #10b5b3;
+}

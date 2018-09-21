@@ -1,0 +1,62 @@
+var _user$project$Types$Model = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return {currentPos: a, winSize: b, loginInfo: c, comChannel: d, error: e, loading: f, gridSize: g, initSeed: h, grid: i, generations: j, angleL: k, angleR: l};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _user$project$Types$LogInfo = F3(
+	function (a, b, c) {
+		return {username: a, formToken: b, sessionId: c};
+	});
+var _user$project$Types$Dead = {ctor: 'Dead'};
+var _user$project$Types$Alive = {ctor: 'Alive'};
+var _user$project$Types$Login = {ctor: 'Login'};
+var _user$project$Types$Home = {ctor: 'Home'};
+var _user$project$Types$SetAngleR = function (a) {
+	return {ctor: 'SetAngleR', _0: a};
+};
+var _user$project$Types$SetAngleL = function (a) {
+	return {ctor: 'SetAngleL', _0: a};
+};
+var _user$project$Types$Random = {ctor: 'Random'};
+var _user$project$Types$Default = {ctor: 'Default'};
+var _user$project$Types$Tick = function (a) {
+	return {ctor: 'Tick', _0: a};
+};
+var _user$project$Types$SetSeed = function (a) {
+	return {ctor: 'SetSeed', _0: a};
+};
+var _user$project$Types$NewUrl = function (a) {
+	return {ctor: 'NewUrl', _0: a};
+};
+var _user$project$Types$Com = function (a) {
+	return {ctor: 'Com', _0: a};
+};
+var _user$project$Types$Loaded = function (a) {
+	return {ctor: 'Loaded', _0: a};
+};
+var _user$project$Types$WinSize = function (a) {
+	return {ctor: 'WinSize', _0: a};
+};
+var _user$project$Types$ChangePos = function (a) {
+	return {ctor: 'ChangePos', _0: a};
+};

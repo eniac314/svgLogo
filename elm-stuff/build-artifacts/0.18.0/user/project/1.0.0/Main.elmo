@@ -1,0 +1,1814 @@
+var _user$project$Main$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$batch(
+		{
+			ctor: '::',
+			_0: _elm_lang$window$Window$resizes(_user$project$Types$WinSize),
+			_1: {
+				ctor: '::',
+				_0: A2(_elm_lang$core$Time$every, 8.5e-2 * _elm_lang$core$Time$second, _user$project$Types$Tick),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Main$urlParser = function (loc) {
+	return _user$project$Types$ChangePos(
+		function (_) {
+			return _.hash;
+		}(loc));
+};
+var _user$project$Main$fernR = F5(
+	function (n, _p0, al, ar, seed) {
+		var _p1 = _p0;
+		var _p12 = _p1._1;
+		var _p11 = _p1._0;
+		if (_elm_lang$core$Native_Utils.eq(n, 0)) {
+			return {ctor: '[]'};
+		} else {
+			var _p2 = A2(
+				_elm_lang$core$Random$step,
+				A2(_elm_lang$core$Random$float, 0, 0.5),
+				seed);
+			var offset1 = _p2._0;
+			var nextSeed1 = _p2._1;
+			var _p3 = A2(
+				_elm_lang$core$Random$step,
+				A2(_elm_lang$core$Random$float, 0, 0.5),
+				nextSeed1);
+			var offset2 = _p3._0;
+			var nextSeed2 = _p3._1;
+			var _p4 = A2(
+				_elm_lang$core$Random$step,
+				A2(_elm_lang$core$Random$float, 0, 0.5),
+				nextSeed2);
+			var nextSeed3 = _p4._1;
+			var _p5 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p11, _1: _p12});
+			var ox = _p5._0;
+			var oy = _p5._1;
+			var _p6 = {
+				ctor: '_Tuple2',
+				_0: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					A2(
+						_elm_lang$core$Result$map,
+						_elm_lang$core$Basics$degrees,
+						_elm_lang$core$String$toFloat(al))),
+				_1: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					A2(
+						_elm_lang$core$Result$map,
+						_elm_lang$core$Basics$degrees,
+						_elm_lang$core$String$toFloat(ar)))
+			};
+			var al_ = _p6._0;
+			var ar_ = _p6._1;
+			var _p7 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p11 / (2 * (9 - n)), _1: _p12 + al_});
+			var lx = _p7._0;
+			var ly = _p7._1;
+			var _p8 = {ctor: '_Tuple2', _0: lx + ox, _1: ly + oy};
+			var lx_ = _p8._0;
+			var ly_ = _p8._1;
+			var lineLeft = A2(
+				_elm_lang$svg$Svg$line,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$x1(
+						_elm_lang$core$Basics$toString(ox)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$y1(
+							_elm_lang$core$Basics$toString(112 - oy)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$x2(
+								_elm_lang$core$Basics$toString(lx_)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$y2(
+									_elm_lang$core$Basics$toString(112 - ly_)),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$strokeWidth('1px'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$strokeDasharray(
+												_elm_lang$core$Basics$toString(_p11 / (2 * (9 - n)))),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$strokeDashoffset(
+													_elm_lang$core$Basics$toString(_p11 / (2 * (9 - n)))),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$animate,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$attributeName('stroke-dashoffset'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$from(
+									_elm_lang$core$Basics$toString(_p11 / (2 * (9 - n)))),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$to('0'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$begin(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(offset1 + ((9 - n) / 2)),
+												's')),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$dur(
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													_elm_lang$core$Basics$toString(0.5 - offset1),
+													's')),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				});
+			var _p9 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p11 / (2 * (9 - n)), _1: _p12 - ar_});
+			var rx = _p9._0;
+			var ry = _p9._1;
+			var _p10 = {ctor: '_Tuple2', _0: rx + ox, _1: ry + oy};
+			var rx_ = _p10._0;
+			var ry_ = _p10._1;
+			var lineRight = A2(
+				_elm_lang$svg$Svg$line,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$x1(
+						_elm_lang$core$Basics$toString(ox)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$y1(
+							_elm_lang$core$Basics$toString(112 - oy)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$x2(
+								_elm_lang$core$Basics$toString(rx_)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$y2(
+									_elm_lang$core$Basics$toString(112 - ry_)),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$strokeWidth('1px'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$strokeDasharray(
+												_elm_lang$core$Basics$toString(_p11 / (2 * (9 - n)))),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$strokeDashoffset(
+													_elm_lang$core$Basics$toString(_p11 / (2 * (9 - n)))),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$animate,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$attributeName('stroke-dashoffset'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$from(
+									_elm_lang$core$Basics$toString(_p11 / (2 * (9 - n)))),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$to('0'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$begin(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(offset2 + ((9 - n) / 2)),
+												's')),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$dur(
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													_elm_lang$core$Basics$toString(0.5 - offset2),
+													's')),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				});
+			return {
+				ctor: '::',
+				_0: lineLeft,
+				_1: {
+					ctor: '::',
+					_0: lineRight,
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						A5(
+							_user$project$Main$fernR,
+							n - 1,
+							_elm_lang$core$Basics$toPolar(
+								{ctor: '_Tuple2', _0: lx_, _1: ly_}),
+							al,
+							ar,
+							nextSeed2),
+						A5(
+							_user$project$Main$fernR,
+							n - 1,
+							_elm_lang$core$Basics$toPolar(
+								{ctor: '_Tuple2', _0: rx_, _1: ry_}),
+							al,
+							ar,
+							nextSeed3))
+				}
+			};
+		}
+	});
+var _user$project$Main$fernLinesR = F3(
+	function (al, ar, seed) {
+		return A2(
+			_elm_lang$svg$Svg$g,
+			{ctor: '[]'},
+			A5(
+				_user$project$Main$fernR,
+				8,
+				_elm_lang$core$Basics$toPolar(
+					{ctor: '_Tuple2', _0: 0, _1: 50}),
+				al,
+				ar,
+				_elm_lang$core$Random$initialSeed(seed)));
+	});
+var _user$project$Main$fern2 = F4(
+	function (n, _p13, al, ar) {
+		var _p14 = _p13;
+		var _p22 = _p14._1;
+		var _p21 = _p14._0;
+		if (_elm_lang$core$Native_Utils.eq(n, 0)) {
+			return {ctor: '[]'};
+		} else {
+			var _p15 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p21, _1: _p22});
+			var ox = _p15._0;
+			var oy = _p15._1;
+			var _p16 = {
+				ctor: '_Tuple2',
+				_0: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					A2(
+						_elm_lang$core$Result$map,
+						_elm_lang$core$Basics$degrees,
+						_elm_lang$core$String$toFloat(al))),
+				_1: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					A2(
+						_elm_lang$core$Result$map,
+						_elm_lang$core$Basics$degrees,
+						_elm_lang$core$String$toFloat(ar)))
+			};
+			var al_ = _p16._0;
+			var ar_ = _p16._1;
+			var _p17 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p21 / (2 * (9 - n)), _1: _p22 + al_});
+			var lx = _p17._0;
+			var ly = _p17._1;
+			var _p18 = {ctor: '_Tuple2', _0: lx + ox, _1: ly + oy};
+			var lx_ = _p18._0;
+			var ly_ = _p18._1;
+			var lineLeft = A2(
+				_elm_lang$svg$Svg$line,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$x1(
+						_elm_lang$core$Basics$toString(ox)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$y1(
+							_elm_lang$core$Basics$toString(112 - oy)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$x2(
+								_elm_lang$core$Basics$toString(lx_)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$y2(
+									_elm_lang$core$Basics$toString(112 - ly_)),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$strokeWidth('1px'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$strokeDasharray(
+												_elm_lang$core$Basics$toString(_p21 / (2 * (9 - n)))),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$strokeDashoffset(
+													_elm_lang$core$Basics$toString(_p21 / (2 * (9 - n)))),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$animate,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$attributeName('stroke-dashoffset'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$from(
+									_elm_lang$core$Basics$toString(_p21 / (2 * (9 - n)))),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$to('0'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$begin(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString((9 - n) / 2),
+												's')),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$dur('0.5s'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				});
+			var _p19 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p21 / (2 * (9 - n)), _1: _p22 - ar_});
+			var rx = _p19._0;
+			var ry = _p19._1;
+			var _p20 = {ctor: '_Tuple2', _0: rx + ox, _1: ry + oy};
+			var rx_ = _p20._0;
+			var ry_ = _p20._1;
+			var lineRight = A2(
+				_elm_lang$svg$Svg$line,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$x1(
+						_elm_lang$core$Basics$toString(ox)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$y1(
+							_elm_lang$core$Basics$toString(112 - oy)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$x2(
+								_elm_lang$core$Basics$toString(rx_)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$y2(
+									_elm_lang$core$Basics$toString(112 - ry_)),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$strokeWidth('1px'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$strokeDasharray(
+												_elm_lang$core$Basics$toString(_p21 / (2 * (9 - n)))),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$strokeDashoffset(
+													_elm_lang$core$Basics$toString(_p21 / (2 * (9 - n)))),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$animate,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$attributeName('stroke-dashoffset'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$from(
+									_elm_lang$core$Basics$toString(_p21 / (2 * (9 - n)))),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$to('0'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$begin(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString((9 - n) / 2),
+												's')),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$dur('0.5s'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				});
+			return {
+				ctor: '::',
+				_0: lineLeft,
+				_1: {
+					ctor: '::',
+					_0: lineRight,
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						A4(
+							_user$project$Main$fern2,
+							n - 1,
+							_elm_lang$core$Basics$toPolar(
+								{ctor: '_Tuple2', _0: lx_, _1: ly_}),
+							al,
+							ar),
+						A4(
+							_user$project$Main$fern2,
+							n - 1,
+							_elm_lang$core$Basics$toPolar(
+								{ctor: '_Tuple2', _0: rx_, _1: ry_}),
+							al,
+							ar))
+				}
+			};
+		}
+	});
+var _user$project$Main$fernLines = F2(
+	function (al, ar) {
+		return A2(
+			_elm_lang$svg$Svg$g,
+			{ctor: '[]'},
+			A4(
+				_user$project$Main$fern2,
+				8,
+				_elm_lang$core$Basics$toPolar(
+					{ctor: '_Tuple2', _0: 0, _1: 50}),
+				al,
+				ar));
+	});
+var _user$project$Main$fern = F2(
+	function (n, _p23) {
+		var _p24 = _p23;
+		var _p29 = _p24._1;
+		var _p28 = _p24._0;
+		if (_elm_lang$core$Native_Utils.eq(n, 0)) {
+			return {
+				ctor: '::',
+				_0: _elm_lang$core$Basics$fromPolar(
+					{ctor: '_Tuple2', _0: _p28, _1: _p29}),
+				_1: {ctor: '[]'}
+			};
+		} else {
+			var _p25 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p28 / 2, _1: 0.39});
+			var rx = _p25._0;
+			var ry = _p25._1;
+			var _p26 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p28 / 2, _1: 2.09});
+			var lx = _p26._0;
+			var ly = _p26._1;
+			var _p27 = _elm_lang$core$Basics$fromPolar(
+				{ctor: '_Tuple2', _0: _p28, _1: _p29});
+			var ox = _p27._0;
+			var oy = _p27._1;
+			var left = {ctor: '_Tuple2', _0: lx + ox, _1: ly + oy};
+			var right = {ctor: '_Tuple2', _0: rx + ox, _1: ry + oy};
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: ox, _1: oy},
+				_1: A2(
+					_elm_lang$core$Basics_ops['++'],
+					A2(
+						_user$project$Main$fern,
+						n - 1,
+						_elm_lang$core$Basics$toPolar(left)),
+					A2(
+						_user$project$Main$fern,
+						n - 1,
+						_elm_lang$core$Basics$toPolar(right)))
+			};
+		}
+	});
+var _user$project$Main$fernPoints = function () {
+	var pts = A2(
+		_user$project$Main$fern,
+		8,
+		_elm_lang$core$Basics$toPolar(
+			{ctor: '_Tuple2', _0: 0, _1: 10}));
+	return A2(
+		_elm_lang$svg$Svg$g,
+		{ctor: '[]'},
+		A2(
+			_elm_lang$core$List$map,
+			function (_p30) {
+				var _p31 = _p30;
+				return A2(
+					_elm_lang$svg$Svg$circle,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$cx(
+							_elm_lang$core$Basics$toString(_p31._0)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$cy(
+								_elm_lang$core$Basics$toString(_p31._1)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$r('1'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			},
+			pts));
+}();
+var _user$project$Main$toCmd = function (c) {
+	return A2(
+		_elm_lang$core$Task$perform,
+		function (_p32) {
+			return c;
+		},
+		_elm_lang$core$Task$succeed(''));
+};
+var _user$project$Main$zip = F2(
+	function (xs, ys) {
+		var _p33 = {ctor: '_Tuple2', _0: xs, _1: ys};
+		if ((_p33._0.ctor === '::') && (_p33._1.ctor === '::')) {
+			return {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: _p33._0._0, _1: _p33._1._0},
+				_1: A2(_user$project$Main$zip, _p33._0._1, _p33._1._1)
+			};
+		} else {
+			return {ctor: '[]'};
+		}
+	});
+var _user$project$Main$makeRange = function (n) {
+	var helper = F2(
+		function (acc, n) {
+			helper:
+			while (true) {
+				if (_elm_lang$core$Native_Utils.eq(n, 0)) {
+					return {ctor: '::', _0: n, _1: acc};
+				} else {
+					var _v5 = {ctor: '::', _0: n, _1: acc},
+						_v6 = n - 1;
+					acc = _v5;
+					n = _v6;
+					continue helper;
+				}
+			}
+		});
+	return A2(
+		helper,
+		{ctor: '[]'},
+		n - 1);
+};
+var _user$project$Main$shuffle = F2(
+	function (xs, seed) {
+		var l = _elm_lang$core$List$length(xs);
+		var g = A2(_elm_lang$core$Random$int, 0, 10 * l);
+		var indexesGen = A2(_elm_lang$core$Random$list, l, g);
+		var indexList = _elm_lang$core$Tuple$first(
+			A2(
+				_elm_lang$core$Random$step,
+				indexesGen,
+				_elm_lang$core$Random$initialSeed(seed)));
+		var sortedList = A2(
+			_elm_lang$core$List$sortWith,
+			F2(
+				function (_p35, _p34) {
+					var _p36 = _p35;
+					var _p37 = _p34;
+					return A2(_elm_lang$core$Basics$compare, _p36._0, _p37._0);
+				}),
+			A2(_user$project$Main$zip, indexList, xs));
+		return A2(_elm_lang$core$List$map, _elm_lang$core$Tuple$second, sortedList);
+	});
+var _user$project$Main$glider = function (gs) {
+	var gliderIndexes = {
+		ctor: '::',
+		_0: 450,
+		_1: {
+			ctor: '::',
+			_0: 451,
+			_1: {
+				ctor: '::',
+				_0: 452,
+				_1: {
+					ctor: '::',
+					_0: 482,
+					_1: {
+						ctor: '::',
+						_0: 511,
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	};
+	var grid = A2(_elm_lang$core$Array$repeat, gs * gs, _user$project$Types$Dead);
+	return A3(
+		_elm_lang$core$List$foldr,
+		F2(
+			function (p, acc) {
+				return A3(_elm_lang$core$Array$set, p, _user$project$Types$Alive, acc);
+			}),
+		grid,
+		gliderIndexes);
+};
+var _user$project$Main$randomize = F4(
+	function (grid, gs, sd, n) {
+		var newGrid = A2(
+			_elm_lang$core$Array$initialize,
+			gs * gs,
+			_elm_lang$core$Basics$always(_user$project$Types$Dead));
+		var scaledN = _elm_lang$core$Basics$round(
+			_elm_lang$core$Basics$toFloat(gs * gs) * (_elm_lang$core$Basics$toFloat(n) / 100));
+		var indexes = _user$project$Main$makeRange(gs * gs);
+		var randIndexes = A2(
+			_elm_lang$core$List$take,
+			scaledN,
+			A2(_user$project$Main$shuffle, indexes, sd));
+		return A3(
+			_elm_lang$core$List$foldr,
+			F2(
+				function (p, acc) {
+					return A3(_elm_lang$core$Array$set, p, _user$project$Types$Alive, acc);
+				}),
+			newGrid,
+			randIndexes);
+	});
+var _user$project$Main$nextStep = F2(
+	function (grid, gs) {
+		var countNeighbours = function (n) {
+			var j = A2(_elm_lang$core$Basics_ops['%'], n, gs);
+			var i = (n / gs) | 0;
+			var upLeft = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i - 1, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j - 1, gs),
+					grid));
+			var up = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i - 1, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j, gs),
+					grid));
+			var upRight = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i - 1, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j + 1, gs),
+					grid));
+			var left = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j - 1, gs),
+					grid));
+			var right = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j + 1, gs),
+					grid));
+			var downLeft = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i + 1, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j - 1, gs),
+					grid));
+			var down = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i + 1, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j, gs),
+					grid));
+			var downRight = A2(
+				_elm_lang$core$Maybe$withDefault,
+				_user$project$Types$Dead,
+				A2(
+					_elm_lang$core$Array$get,
+					(A2(_elm_lang$core$Basics_ops['%'], i + 1, gs) * gs) + A2(_elm_lang$core$Basics_ops['%'], j + 1, gs),
+					grid));
+			var count = A3(
+				_elm_lang$core$List$foldr,
+				F2(
+					function (c, acc) {
+						return _elm_lang$core$Native_Utils.eq(c, _user$project$Types$Alive) ? (acc + 1) : acc;
+					}),
+				0,
+				{
+					ctor: '::',
+					_0: upLeft,
+					_1: {
+						ctor: '::',
+						_0: up,
+						_1: {
+							ctor: '::',
+							_0: upRight,
+							_1: {
+								ctor: '::',
+								_0: left,
+								_1: {
+									ctor: '::',
+									_0: right,
+									_1: {
+										ctor: '::',
+										_0: downLeft,
+										_1: {
+											ctor: '::',
+											_0: down,
+											_1: {
+												ctor: '::',
+												_0: downRight,
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				});
+			return count;
+		};
+		var nextCell = F2(
+			function (n, cell) {
+				var nb = countNeighbours(n);
+				var _p38 = cell;
+				if (_p38.ctor === 'Alive') {
+					return (_elm_lang$core$Native_Utils.eq(nb, 2) || _elm_lang$core$Native_Utils.eq(nb, 3)) ? _user$project$Types$Alive : _user$project$Types$Dead;
+				} else {
+					return _elm_lang$core$Native_Utils.eq(nb, 3) ? _user$project$Types$Alive : _user$project$Types$Dead;
+				}
+			});
+		return A2(_elm_lang$core$Array$indexedMap, nextCell, grid);
+	});
+var _user$project$Main$toStr = function (_p39) {
+	return _elm_lang$core$Basics$toString(
+		_elm_lang$core$Basics$round(_p39));
+};
+var _user$project$Main$angFloat = function (angle) {
+	return A2(
+		_elm_lang$core$Result$withDefault,
+		0,
+		A2(
+			_elm_lang$core$Result$map,
+			_elm_lang$core$Basics$toFloat,
+			_elm_lang$core$String$toInt(angle)));
+};
+var _user$project$Main$rotate = F2(
+	function (pts, angle) {
+		var angle_ = _user$project$Main$angFloat(angle);
+		var fun = function (p) {
+			var _p40 = _elm_lang$core$Basics$toPolar(p);
+			var r = _p40._0;
+			var tet = _p40._1;
+			return _elm_lang$core$Basics$fromPolar(
+				{
+					ctor: '_Tuple2',
+					_0: r,
+					_1: tet + _elm_lang$core$Basics$degrees(angle_)
+				});
+		};
+		return A2(_elm_lang$core$List$map, fun, pts);
+	});
+var _user$project$Main$pointsToSvg = function (xs) {
+	var ptToString = function (_p41) {
+		var _p42 = _p41;
+		var y_ = function (_p43) {
+			return _elm_lang$core$Basics$toString(
+				_elm_lang$core$Basics$round(_p43));
+		}(_p42._1);
+		var x_ = function (_p44) {
+			return _elm_lang$core$Basics$toString(
+				_elm_lang$core$Basics$round(_p44));
+		}(_p42._0);
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			x_,
+			A2(_elm_lang$core$Basics_ops['++'], ' ', y_));
+	};
+	var ptsStr = A2(
+		_elm_lang$core$String$join,
+		' ',
+		A2(_elm_lang$core$List$map, ptToString, xs));
+	return _elm_lang$svg$Svg_Attributes$points(ptsStr);
+};
+var _user$project$Main$extPoints = F2(
+	function (r, n) {
+		var n_ = _elm_lang$core$Basics$toFloat(n);
+		var angle = (2 * _elm_lang$core$Basics$pi) / n_;
+		var go = F2(
+			function (acc, n) {
+				go:
+				while (true) {
+					if (_elm_lang$core$Native_Utils.eq(n, 0)) {
+						return A2(_elm_lang$core$List$map, _elm_lang$core$Basics$fromPolar, acc);
+					} else {
+						var _v11 = {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: r, _1: (n * angle) - (_elm_lang$core$Basics$pi / 2)},
+							_1: acc
+						},
+							_v12 = n - 1;
+						acc = _v11;
+						n = _v12;
+						continue go;
+					}
+				}
+			});
+		return A2(
+			go,
+			{ctor: '[]'},
+			n);
+	});
+var _user$project$Main$renderGrid = F3(
+	function (model, r, s) {
+		var gs = function (_) {
+			return _.gridSize;
+		}(model);
+		var renderCell = F2(
+			function (n, cell) {
+				var _p45 = function () {
+					var _p46 = cell;
+					if (_p46.ctor === 'Dead') {
+						return {ctor: '_Tuple3', _0: 'none', _1: 'none', _2: '0'};
+					} else {
+						return {ctor: '_Tuple3', _0: 'white', _1: '#10AEE2', _2: '1px'};
+					}
+				}();
+				var col = _p45._0;
+				var sc = _p45._1;
+				var sw = _p45._2;
+				var j = (A2(_elm_lang$core$Basics_ops['%'], n, gs) * s) - r;
+				var i = (((n / gs) | 0) * s) - r;
+				return A2(
+					_elm_lang$svg$Svg$rect,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$x(
+							_elm_lang$core$Basics$toString(j)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$y(
+								_elm_lang$core$Basics$toString(i)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$width(
+									_elm_lang$core$Basics$toString(s)),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$height(
+										_elm_lang$core$Basics$toString(s)),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$fill(col),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$strokeWidth(sw),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$stroke(sc),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$class(
+														function () {
+															var _p47 = cell;
+															if (_p47.ctor === 'Dead') {
+																return '';
+															} else {
+																return 'cell';
+															}
+														}()),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			});
+		return {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$svg$Svg$g,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$mask('url(#mask)'),
+					_1: {ctor: '[]'}
+				},
+				_elm_lang$core$Array$toList(
+					A2(
+						_elm_lang$core$Array$indexedMap,
+						renderCell,
+						function (_) {
+							return _.grid;
+						}(model)))),
+			_1: {ctor: '[]'}
+		};
+	});
+var _user$project$Main$setSeed = A2(
+	_elm_lang$core$Task$attempt,
+	function (t) {
+		var _p48 = t;
+		if (_p48.ctor === 'Err') {
+			return _user$project$Types$SetSeed(_elm_lang$core$Maybe$Nothing);
+		} else {
+			return _user$project$Types$SetSeed(
+				_elm_lang$core$Maybe$Just(
+					_elm_lang$core$Basics$round(_p48._0)));
+		}
+	},
+	_elm_lang$core$Time$now);
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p49 = msg;
+		switch (_p49.ctor) {
+			case 'NewUrl':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: _elm_lang$navigation$Navigation$newUrl(_p49._0),
+						_1: {ctor: '[]'}
+					});
+			case 'ChangePos':
+				var _p50 = _p49._0;
+				return _elm_lang$core$Native_Utils.eq(_p50, '#home') ? A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{currentPos: _user$project$Types$Home}),
+					{ctor: '[]'}) : (_elm_lang$core$Native_Utils.eq(_p50, '#login') ? A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{currentPos: _user$project$Types$Login}),
+					{ctor: '[]'}) : A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{currentPos: _user$project$Types$Home}),
+					{ctor: '[]'}));
+			case 'Loaded':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							loading: A2(
+								_elm_lang$core$Set$remove,
+								_p49._0,
+								function (_) {
+									return _.loading;
+								}(model))
+						}),
+					{ctor: '[]'});
+			case 'Com':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{comChannel: _p49._0}),
+					{ctor: '[]'});
+			case 'WinSize':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							winSize: _elm_lang$core$Maybe$Just(_p49._0)
+						}),
+					{ctor: '[]'});
+			case 'SetSeed':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{initSeed: _p49._0}),
+					{ctor: '[]'});
+			case 'Tick':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							grid: (_elm_lang$core$Native_Utils.cmp(
+								function (_) {
+									return _.generations;
+								}(model),
+								50) < 1) ? A2(
+								_user$project$Main$nextStep,
+								function (_) {
+									return _.grid;
+								}(model),
+								function (_) {
+									return _.gridSize;
+								}(model)) : function (_) {
+								return _.grid;
+							}(model),
+							generations: (_elm_lang$core$Native_Utils.cmp(
+								function (_) {
+									return _.generations;
+								}(model),
+								50) < 1) ? (function (_) {
+								return _.generations;
+							}(model) + 1) : function (_) {
+								return _.generations;
+							}(model)
+						}),
+					{ctor: '[]'});
+			case 'Random':
+				var _p51 = function (_) {
+					return _.initSeed;
+				}(model);
+				if (_p51.ctor === 'Nothing') {
+					return A2(
+						_elm_lang$core$Platform_Cmd_ops['!'],
+						_elm_lang$core$Native_Utils.update(
+							model,
+							{error: 'No random seed'}),
+						{
+							ctor: '::',
+							_0: _user$project$Main$setSeed,
+							_1: {ctor: '[]'}
+						});
+				} else {
+					return A2(
+						_elm_lang$core$Platform_Cmd_ops['!'],
+						_elm_lang$core$Native_Utils.update(
+							model,
+							{
+								grid: A4(
+									_user$project$Main$randomize,
+									function (_) {
+										return _.grid;
+									}(model),
+									function (_) {
+										return _.gridSize;
+									}(model),
+									_p51._0,
+									30),
+								error: ''
+							}),
+						{
+							ctor: '::',
+							_0: _user$project$Main$setSeed,
+							_1: {ctor: '[]'}
+						});
+				}
+			case 'SetAngleL':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{angleL: _p49._0}),
+					{ctor: '[]'});
+			case 'SetAngleR':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{angleR: _p49._0}),
+					{ctor: '[]'});
+			default:
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{ctor: '[]'});
+		}
+	});
+var _user$project$Main$gs = 30;
+var _user$project$Main$init = function (loc) {
+	return A2(
+		_elm_lang$core$Platform_Cmd_ops['!'],
+		_user$project$Types$Model(_user$project$Types$Home)(_elm_lang$core$Maybe$Nothing)(_elm_lang$core$Maybe$Nothing)('')('')(_elm_lang$core$Set$empty)(_user$project$Main$gs)(_elm_lang$core$Maybe$Nothing)(
+			_user$project$Main$glider(_user$project$Main$gs))(0)('40')('40'),
+		{
+			ctor: '::',
+			_0: _elm_lang$navigation$Navigation$newUrl(
+				function (_) {
+					return _.hash;
+				}(loc)),
+			_1: {
+				ctor: '::',
+				_0: _user$project$Main$setSeed,
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Main$view = function (model) {
+	var testLine = A2(
+		_elm_lang$svg$Svg$line,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$x1('0'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$y1('89'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$x2('0'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$y2('62'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$strokeWidth('1px'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$strokeDasharray('27'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$svg$Svg$animate,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$attributeName('stroke-dashoffset'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$from('27'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$to('0'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$dur('0.5s'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {ctor: '[]'}
+		});
+	var nbrFr = 7;
+	var strokeW = '2px';
+	var r = 100;
+	var w = _user$project$Main$toStr((2 * (r + (r / 5))) + (r / 10));
+	var h = w;
+	var minX = _user$project$Main$toStr((-1 * (r + (r / 5))) - (r / 20));
+	var minY = minX;
+	var dots = A2(
+		_elm_lang$svg$Svg$g,
+		{ctor: '[]'},
+		A2(
+			_elm_lang$core$List$map,
+			function (_p52) {
+				var _p53 = _p52;
+				return A2(
+					_elm_lang$svg$Svg$circle,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$cx(
+							_elm_lang$core$Basics$toString(_p53._0)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$cy(
+								_elm_lang$core$Basics$toString(_p53._1)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$stroke('#00396C'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$fill('#00396C'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$r('2'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'});
+			},
+			A2(_user$project$Main$extPoints, r, nbrFr)));
+	var back = function (pts) {
+		return A2(
+			_elm_lang$svg$Svg$polygon,
+			{
+				ctor: '::',
+				_0: pts,
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$stroke('white'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$strokeWidth(strokeW),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$fill('white'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			},
+			{ctor: '[]'});
+	}(
+		_user$project$Main$pointsToSvg(
+			A2(_user$project$Main$extPoints, r, nbrFr)));
+	var frame = function (pts) {
+		return A2(
+			_elm_lang$svg$Svg$polygon,
+			{
+				ctor: '::',
+				_0: pts,
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$fill('url(#hexaGrid)'),
+					_1: {ctor: '[]'}
+				}
+			},
+			{ctor: '[]'});
+	}(
+		_user$project$Main$pointsToSvg(
+			A2(_user$project$Main$extPoints, r, nbrFr)));
+	var frameGrad = function (pts) {
+		return A2(
+			_elm_lang$svg$Svg$polygon,
+			{
+				ctor: '::',
+				_0: pts,
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$fill('url(#grad2)'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$fillOpacity('0.4'),
+						_1: {ctor: '[]'}
+					}
+				}
+			},
+			{ctor: '[]'});
+	}(
+		_user$project$Main$pointsToSvg(
+			A2(_user$project$Main$extPoints, r, nbrFr)));
+	var frameGrad2 = function (pts) {
+		return A2(
+			_elm_lang$svg$Svg$polygon,
+			{
+				ctor: '::',
+				_0: pts,
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$fill('url(#grad1)'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$fillOpacity('0.7'),
+						_1: {ctor: '[]'}
+					}
+				}
+			},
+			{ctor: '[]'});
+	}(
+		_user$project$Main$pointsToSvg(
+			A2(_user$project$Main$extPoints, r, nbrFr)));
+	var frameHole = function (pts) {
+		return A2(
+			_elm_lang$svg$Svg$polygon,
+			{
+				ctor: '::',
+				_0: pts,
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$fill('white'),
+					_1: {ctor: '[]'}
+				}
+			},
+			{ctor: '[]'});
+	}(
+		_user$project$Main$pointsToSvg(
+			A2(_user$project$Main$extPoints, r, nbrFr)));
+	var def = A2(
+		_elm_lang$svg$Svg$defs,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$svg$Svg$mask,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$id('mask'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$rect,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$width('100%'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$height('100%'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$x(
+										_elm_lang$core$Basics$toString(-1 * ((r + 40) + 20))),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$y(
+											_elm_lang$core$Basics$toString(-1 * ((r + 40) + 20))),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$fill('black'),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: frameHole,
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$svg$Svg$pattern,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$id('hexaGrid'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$width('100%'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$height('100%'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$patternContentUnits('objectBoundingBox'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$svg$Svg$image,
+							{
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$xlinkHref('./images/cpuSD.jpg'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$width('1'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$height('1'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$preserveAspectRatio('none'),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$linearGradient,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$id('grad1'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$x1('0%'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$y1('100%'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$x2('100%'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$y2('0%'),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$svg$Svg$stop,
+								{
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$offset('0.2'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$stopColor('#10AEE2'),
+										_1: {ctor: '[]'}
+									}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$svg$Svg$animate,
+										{
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$attributeName('stop-Color'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$from('#10AEE2'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$to('black'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$dur('5s'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$svg$Svg$stop,
+									{
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$offset('0.8'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$stopColor('black'),
+											_1: {ctor: '[]'}
+										}
+									},
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$svg$Svg$animate,
+											{
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$attributeName('stop-Color'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$from('black'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$to('#10AEE2'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$dur('5s'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$fill('freeze'),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$svg$Svg$filter,
+							{
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$id('softGlow'),
+								_1: {ctor: '[]'}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$svg$Svg$radialGradient,
+								{
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$id('grad2'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$r('50%'),
+										_1: {
+											ctor: '::',
+											_0: function (gen) {
+												return function (v) {
+													return _elm_lang$svg$Svg_Attributes$cx(
+														A2(_elm_lang$core$Basics_ops['++'], v, '%'));
+												}(
+													_elm_lang$core$Basics$toString(
+														_elm_lang$core$Basics$round(((0.3 * gen) / _user$project$Main$gs) * 100)));
+											}(
+												_elm_lang$core$Basics$toFloat(
+													function (_) {
+														return _.generations;
+													}(model))),
+											_1: {
+												ctor: '::',
+												_0: function (gen) {
+													return function (v) {
+														return _elm_lang$svg$Svg_Attributes$cy(
+															A2(_elm_lang$core$Basics_ops['++'], v, '%'));
+													}(
+														_elm_lang$core$Basics$toString(
+															_elm_lang$core$Basics$round(((20 - (0.3 * gen)) / _user$project$Main$gs) * 100)));
+												}(
+													_elm_lang$core$Basics$toFloat(
+														function (_) {
+															return _.generations;
+														}(model))),
+												_1: {
+													ctor: '::',
+													_0: function (gen) {
+														return function (v) {
+															return _elm_lang$svg$Svg_Attributes$fx(
+																A2(_elm_lang$core$Basics_ops['++'], v, '%'));
+														}(
+															_elm_lang$core$Basics$toString(
+																_elm_lang$core$Basics$round(((0.3 * gen) / _user$project$Main$gs) * 100)));
+													}(
+														_elm_lang$core$Basics$toFloat(
+															function (_) {
+																return _.generations;
+															}(model))),
+													_1: {
+														ctor: '::',
+														_0: function (gen) {
+															return function (v) {
+																return _elm_lang$svg$Svg_Attributes$fy(
+																	A2(_elm_lang$core$Basics_ops['++'], v, '%'));
+															}(
+																_elm_lang$core$Basics$toString(
+																	_elm_lang$core$Basics$round(((20 - (0.3 * gen)) / _user$project$Main$gs) * 100)));
+														}(
+															_elm_lang$core$Basics$toFloat(
+																function (_) {
+																	return _.generations;
+																}(model))),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$svg$Svg$stop,
+										{
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$offset('0'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$stopColor('#10AEE2'),
+												_1: {ctor: '[]'}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$svg$Svg$stop,
+											{
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$offset('1'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$stopColor('black'),
+													_1: {ctor: '[]'}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {ctor: '[]'}
+									}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		});
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$style(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'background-color', _1: '#282425'},
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$id('page'),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$id('logo'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$svg,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$width('1000px'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$viewBox(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										minX,
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											' ',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												minY,
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													' ',
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														w,
+														A2(_elm_lang$core$Basics_ops['++'], ' ', h))))))),
+								_1: {ctor: '[]'}
+							}
+						},
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							{
+								ctor: '::',
+								_0: def,
+								_1: {
+									ctor: '::',
+									_0: frame,
+									_1: {
+										ctor: '::',
+										_0: frameGrad2,
+										_1: {
+											ctor: '::',
+											_0: frameGrad,
+											_1: {
+												ctor: '::',
+												_0: testLine,
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_user$project$Main$fernLines,
+														function (_) {
+															return _.angleL;
+														}(model),
+														function (_) {
+															return _.angleR;
+														}(model)),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							},
+							A3(_user$project$Main$renderGrid, model, r, 7))),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$main = A2(
+	_elm_lang$navigation$Navigation$program,
+	_user$project$Main$urlParser,
+	{init: _user$project$Main$init, update: _user$project$Main$update, view: _user$project$Main$view, subscriptions: _user$project$Main$subscriptions})();

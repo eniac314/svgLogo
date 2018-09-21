@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+
+  
+    <title>Test logo</title>
+    <style>
+      html,head,body { padding:0; margin:0; }
+      body { font-family: calibri, helvetica, arial, sans-serif; }
+    </style>
+  </head>
+
+  <body>
+
+  <div id="main"></div>
+   <script src="js/main.js"></script>
+   <script>
+    var node = document.getElementById('main');
+    var app = Elm.Main.embed(node);
+
+    // app.ports.loadCaptcha.subscribe(function() {
+    //   grecaptcha.render(
+    //     document.querySelector('div.g-recaptcha'),
+    //     {
+    //         sitekey: '6LesFxsUAAAAAB9y9NJ3HKUEKgg7UG4mO8Hl0841',
+    //         callback: function onSubmit(val) {
+    //           app.ports.captcha_port.send(val);
+    //         },
+    //     }
+    //   );  
+    // });
+    
+
+  </script>
+  	
+  </body>
+
+</html>
